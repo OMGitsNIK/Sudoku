@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="bundle.js"></script>
+    <title>Sudoku Solver Visualizer</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-row">
+            <h1>Sudoku Solver</h1>
+            <hr>
+        </div>
+
+        <div class="board-row">
+            <table id="sudoku"></table>
+        </div>
+
+        <div class="slider-row">
+            <label for="sld-solve-speed">Solving speed:</label>
+            <input type="range" id="sld-solving-speed" min="0" max="3" value="2" list="ticks">
+            <datalist id="ticks">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </datalist>
+        </div>
+
+        <div class="buttons-row">
+            <button id="btn-clear" type="button">Clear</button>
+            <button id="btn-solve" type="button">Solve using Backtracking</button>
+            <button id="btn-slv" type="button">Solve using Dynamic Programming</button>
+            <button id="btn-generate" type="button">Generate</button>
+        </div>
+
+
+        <div class="status-row">
+            <h2 id="sudoku-status"></h2>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-info">
+            Made by Nikhil Rao, Jonas Ferrao, Joseph Makkimmane, and Terrence Braganca
+        </p>
+    </footer>
+</body>
+
+</html>
