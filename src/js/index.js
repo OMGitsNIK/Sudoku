@@ -12,6 +12,7 @@ const sudokuTblElement = document.getElementById('sudoku');
 const sldSolvingSpeed = document.getElementById('sld-solving-speed');
 const btnClear = document.getElementById('btn-clear');
 const btnSolve = document.getElementById('btn-solve');
+const Solve1 = document.getElementById('btn-slv');
 const btnGenerate = document.getElementById('btn-generate');
 const sudokuStatus = document.getElementById('sudoku-status');
 
@@ -43,6 +44,26 @@ btnClear.addEventListener('click', evt => {
     sudokuRenderer.setEditable(true);
     sudokuStatus.textContent = '';
     btnSolve.disabled = false;
+    b.disabled = false;
+});
+
+Solve1.addEventListener('click', async evt => {
+    console.log('YRDYTDD')
+    sudokuRenderer.setEditable(false);
+    sudokuStatus.textContent = '';
+    sudokuStatus.classList.value = '';
+    evt.target.disabled = true;
+    if (await sudokuRenderer.renderSolve()) {
+        if (!sudokuRenderer.solver.wasCanceled) {
+            sudokuStatus.classList.add('status-success');
+            sudokuStatus.textContent = 'Solved!';
+        }
+    }
+    else {
+        sudokuStatus.classList.add('status-failed');
+        sudokuStatus.textContent = 'Unsolvable!';
+    }
+    evt.target.disabled = false;
 });
 
 btnSolve.addEventListener('click', async evt => {
@@ -62,6 +83,7 @@ btnSolve.addEventListener('click', async evt => {
     }
     evt.target.disabled = false;
 });
+
 
 btnGenerate.addEventListener('click', evt => {
     const sudokuGenerator = new SudokuGenerator();
