@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #eef0f2;
+    margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template-areas: 
+        "sudoku" 
+        "gap" 
+        "footer";
+    grid-template-rows: min-content 1fr min-content;
+}
+
+.container {
+    grid-area: sudoku;
+    display: grid;
+    margin-top: 1rem;
+    grid-template-areas:
+        "title"
+        "board"
+        "slider"
+        "buttons"
+        "status";
+}
+
+.title-row {
+    grid-area: title;
+    justify-self: center;
+}
+
+.board-row {
+    grid-area: board;
+    justify-self: center;
+    margin-top: 1em;
+}
+
+.slider-row {
+    grid-area: slider;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.buttons-row {
+    grid-area: buttons;
+    justify-self: center;
+    margin-top: 1em;
+}
+
+.status-row {
+    grid-area: status;
+    justify-self: center;
+}
+
+footer {
+    grid-area: footer;
+    width: 100%;
+    background-color: #196cca;
+    color: #eef0f2;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.footer-info {
+    margin: 0;
+}
+
+.footer-info a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;
+}
